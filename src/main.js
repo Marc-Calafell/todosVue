@@ -13,5 +13,6 @@ Vue.use(VueMaterial)
 new Vue({
   el: '#app',
   template: '<App/>',
-  components: { App }
+  components: { App },
 })
+
