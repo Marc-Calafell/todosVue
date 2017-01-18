@@ -1,5 +1,10 @@
 <template>
+
     <div>
+        <div v-show="!authorized">
+            <md-button class="md-raised md-warn">Warn</md-button>
+        </div>
+
         <ul>
             <li v-for="(todo, index) in todos"> {{ todo.name }}</li>
         </ul>
@@ -8,6 +13,22 @@
 <style>
 </style>
 <script>
+// localStorage persistence
+var STORAGE_KEY = 'todosstorage'
+    var todoStorage = {
+      fetch: function () {
+        var todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
+        todos.forEach(function (todo, index) {
+          todo.id = index
+        })
+        todoStorage.uid = todos.length
+        return todos
+      },
+      save: function (todos) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(todos))
+      }
+    }
+
 export default{
   data () {
     return {
@@ -29,6 +50,7 @@ export default{
         console.log(response.data)
       })
     }
+
   }
 }
 </script>
