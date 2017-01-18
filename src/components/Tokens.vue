@@ -1,20 +1,9 @@
 <template>
     <div>
-
-        <div>tokens here</div>
-
+      TOKENS HERE
     </div>
 </template>
 <style>
-
 </style>
 <script>
-
-    export default{
-        data(){
-            return{
-                msg:'tokens here'
-            }
-        }
-    }
 </script>

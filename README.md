@@ -1,6 +1,6 @@
-# todosvue
+# todos-vue
 
-> A Vue.js project
+> Client vue todosbackend
 
 ## Build Setup
 

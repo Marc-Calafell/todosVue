@@ -11,47 +11,39 @@
     <md-sidenav class="md-left" ref="leftSidenav" @open="open('Left')" @close="close('Left')">
       <md-toolbar class="md-large">
         <div class="md-toolbar-container">
-          <h3 class="md-title">Sidenav content</h3>
-            <md-avatar class="md-large">
-              <img src="https://placeimg.com/60/60/people/2" alt="Avatar">
-            </md-avatar>
+          <h3 class="md-title">Todos</h3>
         </div>
       </md-toolbar>
 
-          <div class="phone-viewport">
-            <md-list>
-              <md-list-item>
-                <md-icon>move_to_inbox</md-icon> <router-link to="todos">Todos</router-link>
-              </md-list-item>
+      <md-list>
+        <md-list-item @click="toggleLeftSidenav">
+          <md-icon>move_to_inbox</md-icon>
+          <router-link exact to="/todos">Todos</router-link>
+        </md-list-item>
 
-              <md-list-item>
-                <md-icon>send</md-icon> <router-link to="tokens">Tokens</router-link>
-              </md-list-item>
+        <md-list-item @click="toggleLeftSidenav">
+          <md-icon>send</md-icon> <router-link exact  to="/tokens" >Tokens</router-link>
+        </md-list-item>
 
-              <md-list-item>
-                <md-icon>error</md-icon> <router-link to="spa">Spa</router-link>
+        <md-list-item @click="toggleLeftSidenav">
+          <md-avatar>
+            <img src="https://placeimg.com/40/40/people/5" alt="People">
+          </md-avatar>
 
-                <md-divider class="md-inset"></md-divider>
-              </md-list-item>
+          <span>Contact example</span>
 
-              <md-list-item>
-                <md-avatar>
-                  <img src="https://placeimg.com/40/40/people/5" alt="People">
-                </md-avatar>
+          <md-button class="md-icon-button md-list-action">
+            <md-icon class="md-primary">chat_bubble</md-icon>
+          </md-button>
+        </md-list-item>
 
-                <span>Abbey Christansen</span>
 
-                <md-button class="md-icon-button md-list-action">
-                  <md-icon class="md-primary">chat_bubble</md-icon>
-                </md-button>
-              </md-list-item>
+      </md-list>
 
-            </md-list>
-          </div>
     </md-sidenav>
 
+    <router-view></router-view>
   </div>
-
 </template>
 
 <script>
@@ -66,12 +58,6 @@ export default {
     toggleLeftSidenav () {
       this.$refs.leftSidenav.toggle()
     },
-    toggleRightSidenav () {
-      this.$refs.rightSidenav.toggle()
-    },
-    closeRightSidenav () {
-      this.$refs.rightSidenav.close()
-    },
     open (ref) {
       console.log('Opened: ' + ref)
     },
@@ -79,10 +65,12 @@ export default {
       console.log('Closed: ' + ref)
     }
   }
-
 }
 </script>
 
 <style>
-
+a {
+  color: inherit;
+  text-decoration: none;
+}
 </style>
