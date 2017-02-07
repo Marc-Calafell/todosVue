@@ -2,7 +2,7 @@
   "name": "todos-vue",
   "version": "1.0.0",
   "description": "Client vue todosbackend",
-  "author": "Sergi Tur Badenas <sergiturbadenas@gmail.com>",
+  "author": "Marc Calafell <mcalafellSMX@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",

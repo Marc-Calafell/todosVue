@@ -1,6 +1,6 @@
 <template>
     <div>
-        TOKENS HERE
+        ROUTE NOT FOUND
     </div>
 </template>
 <style>
